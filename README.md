@@ -1,4 +1,4 @@
-# THIS IS A WIP
+# THIS IS A W.I.P.
 ## [frostzzone.github.io](https://frostzzone.github.io)
 My Homepage
 

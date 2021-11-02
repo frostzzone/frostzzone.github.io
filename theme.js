@@ -1,4 +1,4 @@
-window.onload = function() {
+ window.onload = function() {
   
       // Try to read from local storage, otherwise set to default
       let currentTheme = localStorage.getItem("mytheme") || "Default";
