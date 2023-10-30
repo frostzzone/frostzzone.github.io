@@ -1,127 +1,543 @@
- /*Color stuff*/
-  .Default {
-    --primary-color: #04AA6D;
-    --secondary-color: #000;
-    --background-default: #efefef;
-    --background-paper: #fff;
-    --text-color: #000;
-    --nav-active: #04AA6D;
-    --content-color: #f1f1f1;
-  }
-  .Dark {
-    --primary-color: #222;
-    --secondary-color: rgb(200, 200, 200);
-    --background-default: #444;
-    --background-paper: #111;
-    --text-color: #fff;
-    --nav-active: #04AA6D;
-    --content-color: #666;
-  }
-  /*Halloween palette https://colorhunt.co/palette/52006acd113bff7600ffa900*/ 
-    .Halloween-light {
-      --primary-color: #FF7600;
-      --secondary-color: #999;
-      --background-default: #fff;
-      --text-color: #000;
-      --nav-active: #FF7600;
-      --content-color: #f1f1f1;
-    }
-    .Halloween-dark {
-      --primary-color: #FF7600;
-      --secondary-color: #444;
-      --background-default: #000;
-      --text-color: #fff;
-      --nav-active: #FF7600;
-      --content-color: #666;
-    }
-
-  body {
-    background: var(--background-default);
-    color: var(--text-color)
-  }
-  .primary-div {
-    background: var(--primary-color);
-    width: 250px;
-    height: 250px;
-  }
-  .secondary-div {
-    background: var(--secondary-color);
-    width: 250px;
-    height: 250px;
-  }
-
-/*Top Navigation Bar*/
-  /* Add a black background color to the top navigation */
-    .topnav {
-      background-color: #333;
-      overflow: hidden;
-    }
-
-  /* Style the links inside the navigation bar */
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-  /* Change the color of links on hover */
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-  /* Add a color to the active/current link */
-    .topnav a.active {
-      background-color: var(--nav-active);
-      color: white;
-    }
-/*FOOTER*/
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: #222222;
-   color: white;
-   text-align: center;
-   padding: 3px;
-}
-/*collapsible stuff*/
-.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
+html {
+	height: 100%;
+	width: 100%;
+	background-color: #1a1a1a;
+	margin: 0;
+	/*overflow: hidden;*/
 }
 
-.active, .collapsible:hover {
-  background-color: #555;
+/* custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.collapsible:after {
-  content: '\002B';
-  color: white;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0069fe;
+  border-radius: 10px;
 }
 
-.active:after {
-  content: "\2212";
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00cffe; 
 }
 
-.content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: var(--content-color);
+.dark {
+	background-color: #1a1a1a;
+}
+
+.highlight {
+	padding: 0px 5px;
+	margin: 0;
+}
+
+#user {
+	color: #0069fe;
+}
+
+.point {
+	color: #00cffe;
+	/*color: #f9430a;*/
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.social {
+	border: none;
+	background: transparent;
+	margin: 5px;
+}
+
+.social img {
+	width: 43px;
+	height: 43px;
+	border-radius: 9px;
+	padding: 4px;
+	border: 1px solid transparent;
+	transition: all 0.2s ease;
+	margin: 0;
+	margin-top: 5px;
+}
+
+.social img:hover {
+	border: 1px solid #000;
+	transition: all 0.1s ease-in-out;
+}
+
+.social img:active {
+	border: 1px solid transparent;
+}
+
+#replit img {
+	filter: invert(64%) sepia(6%) saturate(293%) hue-rotate(182deg) brightness(93%) contrast(88%);
+}
+
+#replit:hover img {
+	filter: invert(50%) sepia(7%) saturate(267%) hue-rotate(187deg) brightness(94%) contrast(89%);
+}
+
+#discord img {
+	filter: invert(57%) sepia(81%) saturate(5735%) hue-rotate(222deg) brightness(95%) contrast(99%);
+}
+
+#discord:hover img {
+	filter: invert(61%) sepia(74%) saturate(7235%) hue-rotate(225deg) brightness(88%) contrast(93%);
+}
+
+#github img {
+	filter: invert(100%) sepia(96%) saturate(0%) hue-rotate(188deg) brightness(106%) contrast(103%);
+}
+
+#github:hover img {
+	filter: invert(99%) sepia(79%) saturate(127%) hue-rotate(252deg) brightness(112%) contrast(80%);
+}
+
+#twitter img {
+	filter: invert(48%) sepia(96%) saturate(484%) hue-rotate(164deg) brightness(91%) contrast(108%);
+}
+
+#twitter:hover img {
+	filter: invert(41%) sepia(21%) saturate(6407%) hue-rotate(180deg) brightness(96%) contrast(84%);
+}
+
+#guilded img {
+	filter: invert(58%) sepia(82%) saturate(825%) hue-rotate(13deg) brightness(110%) contrast(107%);
+}
+
+#guilded:hover img {
+	filter: invert(74%) sepia(82%) saturate(1600%) hue-rotate(4deg) brightness(94%) contrast(104%);
+}
+
+/* unvisited link */
+.glitch a:link {
+  color: #FFF;
+  text-decoration: none;
+}
+
+/* visited link */
+.glitch a:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+
+/* mouse over link */
+.glitch a:hover {
+  color: #FF00F0;
+  text-decoration: none;
+}
+
+/* selected link */
+.glitch a:active {
+  color: #4242e6;
+  text-decoration: none;
+}
+
+.glitch {
+    position: fixed;
+    margin: 0 auto;
+    color: #fff;
+    bottom: 5px;
+    right: 16px;
+}
+
+.glitch:hover::before,
+.glitch:hover::after {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    clip: rect(0, 900px, 0, 0);
+    content: attr(data-text);
+}
+
+.glitch:hover::after {
+    -webkit-animation-name: glitch-animation;
+    animation-name: glitch-animation;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    left: 4px;
+    text-shadow: -1px 0 #ffa800;
+}
+
+.glitch:hover::before {
+    -webkit-animation-name: glitch-animation-2;
+    animation-name: glitch-animation-2;
+    -webkit-animation-duration: 6s;
+    animation-duration: 6s;
+    left: -4px;
+    text-shadow: 1px 0 #00d8ff;
+}
+
+/* Expanded Animations */
+@-webkit-keyframes glitch-animation {
+    0% {
+        clip: rect(42px, 9999px, 44px, 0);
+    }
+
+    5% {
+        clip: rect(12px, 9999px, 59px, 0);
+    }
+
+    10% {
+        clip: rect(48px, 9999px, 29px, 0);
+    }
+
+    15.0% {
+        clip: rect(42px, 9999px, 73px, 0);
+    }
+
+    20% {
+        clip: rect(63px, 9999px, 27px, 0);
+    }
+
+    25% {
+        clip: rect(34px, 9999px, 55px, 0);
+    }
+
+    30.0% {
+        clip: rect(86px, 9999px, 73px, 0);
+    }
+
+    35% {
+        clip: rect(20px, 9999px, 20px, 0);
+    }
+
+    40% {
+        clip: rect(26px, 9999px, 60px, 0);
+    }
+
+    45% {
+        clip: rect(25px, 9999px, 66px, 0);
+    }
+
+    50% {
+        clip: rect(57px, 9999px, 98px, 0);
+    }
+
+    55.0% {
+        clip: rect(5px, 9999px, 46px, 0);
+    }
+
+    60.0% {
+        clip: rect(82px, 9999px, 31px, 0);
+    }
+
+    65% {
+        clip: rect(54px, 9999px, 27px, 0);
+    }
+
+    70% {
+        clip: rect(28px, 9999px, 99px, 0);
+    }
+
+    75% {
+        clip: rect(45px, 9999px, 69px, 0);
+    }
+
+    80% {
+        clip: rect(23px, 9999px, 85px, 0);
+    }
+
+    85.0% {
+        clip: rect(54px, 9999px, 84px, 0);
+    }
+
+    90% {
+        clip: rect(45px, 9999px, 47px, 0);
+    }
+
+    95% {
+        clip: rect(37px, 9999px, 20px, 0);
+    }
+
+    100% {
+        clip: rect(4px, 9999px, 91px, 0);
+    }
+}
+
+@keyframes glitch-animation {
+    0% {
+        clip: rect(42px, 9999px, 44px, 0);
+    }
+
+    5% {
+        clip: rect(12px, 9999px, 59px, 0);
+    }
+
+    10% {
+        clip: rect(48px, 9999px, 29px, 0);
+    }
+
+    15.0% {
+        clip: rect(42px, 9999px, 73px, 0);
+    }
+
+    20% {
+        clip: rect(63px, 9999px, 27px, 0);
+    }
+
+    25% {
+        clip: rect(34px, 9999px, 55px, 0);
+    }
+
+    30.0% {
+        clip: rect(86px, 9999px, 73px, 0);
+    }
+
+    35% {
+        clip: rect(20px, 9999px, 20px, 0);
+    }
+
+    40% {
+        clip: rect(26px, 9999px, 60px, 0);
+    }
+
+    45% {
+        clip: rect(25px, 9999px, 66px, 0);
+    }
+
+    50% {
+        clip: rect(57px, 9999px, 98px, 0);
+    }
+
+    55.0% {
+        clip: rect(5px, 9999px, 46px, 0);
+    }
+
+    60.0% {
+        clip: rect(82px, 9999px, 31px, 0);
+    }
+
+    65% {
+        clip: rect(54px, 9999px, 27px, 0);
+    }
+
+    70% {
+        clip: rect(28px, 9999px, 99px, 0);
+    }
+
+    75% {
+        clip: rect(45px, 9999px, 69px, 0);
+    }
+
+    80% {
+        clip: rect(23px, 9999px, 85px, 0);
+    }
+
+    85.0% {
+        clip: rect(54px, 9999px, 84px, 0);
+    }
+
+    90% {
+        clip: rect(45px, 9999px, 47px, 0);
+    }
+
+    95% {
+        clip: rect(37px, 9999px, 20px, 0);
+    }
+
+    100% {
+        clip: rect(4px, 9999px, 91px, 0);
+    }
+}
+
+@-webkit-keyframes glitch-animation-2 {
+    0% {
+        clip: rect(65px, 9999px, 100px, 0);
+    }
+
+    5% {
+        clip: rect(52px, 9999px, 74px, 0);
+    }
+
+    10% {
+        clip: rect(79px, 9999px, 85px, 0);
+    }
+
+    15.0% {
+        clip: rect(75px, 9999px, 5px, 0);
+    }
+
+    20% {
+        clip: rect(67px, 9999px, 61px, 0);
+    }
+
+    25% {
+        clip: rect(14px, 9999px, 79px, 0);
+    }
+
+    30.0% {
+        clip: rect(1px, 9999px, 66px, 0);
+    }
+
+    35% {
+        clip: rect(86px, 9999px, 30px, 0);
+    }
+
+    40% {
+        clip: rect(23px, 9999px, 98px, 0);
+    }
+
+    45% {
+        clip: rect(85px, 9999px, 72px, 0);
+    }
+
+    50% {
+        clip: rect(71px, 9999px, 75px, 0);
+    }
+
+    55.0% {
+        clip: rect(2px, 9999px, 48px, 0);
+    }
+
+    60.0% {
+        clip: rect(30px, 9999px, 16px, 0);
+    }
+
+    65% {
+        clip: rect(59px, 9999px, 50px, 0);
+    }
+
+    70% {
+        clip: rect(41px, 9999px, 62px, 0);
+    }
+
+    75% {
+        clip: rect(2px, 9999px, 82px, 0);
+    }
+
+    80% {
+        clip: rect(47px, 9999px, 73px, 0);
+    }
+
+    85.0% {
+        clip: rect(3px, 9999px, 27px, 0);
+    }
+
+    90% {
+        clip: rect(26px, 9999px, 55px, 0);
+    }
+
+    95% {
+        clip: rect(42px, 9999px, 97px, 0);
+    }
+
+    100% {
+        clip: rect(38px, 9999px, 49px, 0);
+    }
+}
+
+@keyframes glitch-animation-2 {
+    0% {
+        clip: rect(65px, 9999px, 100px, 0);
+    }
+
+    5% {
+        clip: rect(52px, 9999px, 74px, 0);
+    }
+
+    10% {
+        clip: rect(79px, 9999px, 85px, 0);
+    }
+
+    15.0% {
+        clip: rect(75px, 9999px, 5px, 0);
+    }
+
+    20% {
+        clip: rect(67px, 9999px, 61px, 0);
+    }
+
+    25% {
+        clip: rect(14px, 9999px, 79px, 0);
+    }
+
+    30.0% {
+        clip: rect(1px, 9999px, 66px, 0);
+    }
+
+    35% {
+        clip: rect(86px, 9999px, 30px, 0);
+    }
+
+    40% {
+        clip: rect(23px, 9999px, 98px, 0);
+    }
+
+    45% {
+        clip: rect(85px, 9999px, 72px, 0);
+    }
+
+    50% {
+        clip: rect(71px, 9999px, 75px, 0);
+    }
+
+    55.0% {
+        clip: rect(2px, 9999px, 48px, 0);
+    }
+
+    60.0% {
+        clip: rect(30px, 9999px, 16px, 0);
+    }
+
+    65% {
+        clip: rect(59px, 9999px, 50px, 0);
+    }
+
+    70% {
+        clip: rect(41px, 9999px, 62px, 0);
+    }
+
+    75% {
+        clip: rect(2px, 9999px, 82px, 0);
+    }
+
+    80% {
+        clip: rect(47px, 9999px, 73px, 0);
+    }
+
+    85.0% {
+        clip: rect(3px, 9999px, 27px, 0);
+    }
+
+    90% {
+        clip: rect(26px, 9999px, 55px, 0);
+    }
+
+    95% {
+        clip: rect(42px, 9999px, 97px, 0);
+    }
+
+    100% {
+        clip: rect(38px, 9999px, 49px, 0);
+    }
 }
